@@ -1,1 +1,109 @@
-<p>property works!</p>
+
+<!-- <mat-toolbar color="primary" class="toolbar-title">
+  <span>Asset Management</span>
+</mat-toolbar> -->
+
+<!-- <mat-card class="title-card">
+  <mat-card-title>Asset Management</mat-card-title>
+</mat-card> -->
+
+<div class="page-title">
+  <h1>Property Management</h1>
+</div>
+
+<div class="button-container">
+  <button mat-raised-button color="primary" routerLink="/property/create">
+    Create New Property
+  </button>
+</div>
+
+<br />
+
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+      <td mat-cell *matCellDef="let data"> {{ data.id }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="alias">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Alias </th>
+      <td mat-cell *matCellDef="let data"> {{ data.alias }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="propertyType">
+      <th mat-header-cell *matHeaderCellDef> Property Type </th>
+      <td mat-cell *matCellDef="let data"> {{ data.propertyType }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="builtArea">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Built Area </th>
+      <td mat-cell *matCellDef="let data"> {{ data.builtArea }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bedrooms">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Bedrooms </th>
+      <td mat-cell *matCellDef="let data"> {{ data.bedrooms }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="exterior">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Exterior </th>
+      <td mat-cell *matCellDef="let data"> {{ data.exterior }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+      <td mat-cell *matCellDef="let data"> {{ data.country }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="province">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Province </th>
+      <td mat-cell *matCellDef="let data"> {{ data.province }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+      <td mat-cell *matCellDef="let data"> {{ data.city }} </td>
+    </ng-container>
+
+        <ng-container matColumnDef="district">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
+      <td mat-cell *matCellDef="let data"> {{ data.district }} </td>
+    </ng-container>
+    
+        <ng-container matColumnDef="neighborhood">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Neighborhood </th>
+      <td mat-cell *matCellDef="let data"> {{ data.neighborhood }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let data">
+        <button mat-icon-button color="primary" matTooltip="Edit" (click)="onEdit(data.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" matTooltip="Delete" (click)="onDelete(data.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+</div>
+
+<mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+</mat-paginator>
+
+<!-- <br />
+<div class="link-container">
+  <a routerLink="/">Back to Home Page</a>
+</div> -->
+
+<br>
+<div class="page-copyright">
+  <p> (C) Universo Java 2025-2026 </p>
+</div>
