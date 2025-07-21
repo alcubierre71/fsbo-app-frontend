@@ -8,7 +8,6 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [  
     MatToolbar,
-    MatButtonModule,
     RouterLink
   ],
   templateUrl: './toolbar.component.html',

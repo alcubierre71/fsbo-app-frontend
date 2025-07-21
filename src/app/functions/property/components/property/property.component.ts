@@ -101,6 +101,34 @@ export class PropertyComponent implements OnInit {
 
   }
 
+  // Solicitar Valoracion del inmueble
+  onValuation(id1: number): void {
+    console.log('Request valuation property with ID:', id1);
+
+    // Se abre un Dialog que contiene en su interior el componente ConfirmComponent
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+     width: '450px',   // ancho de la ventana del dialog
+     data: {id: id1, module: "request-valuation-property"}, // se indica la accion a realizar
+    });
+
+    // Call API here
+    // Logica a ejecutar una vez se haya cerrado la ventana Dialog
+    dialogRef.afterClosed().subscribe( (result: any) => {
+      console.log('The dialog was closed');
+        
+      // Controlamos el retorno correcto o error
+      if (result == 1) {
+        this.openSnackBar("Property valuated", "Exito");
+        // Recargamos la tabla de registros
+        this.loadData();
+      } else if (result == 2) {
+        this.openSnackBar("Error valuating the property", "Error");
+      }
+  
+    });
+
+  }
+
   // Editar registro
   onEdit(id: number): void {
     console.log('Edit property with ID:', id);
@@ -115,7 +143,7 @@ export class PropertyComponent implements OnInit {
     // Se abre un Dialog que contiene en su interior el componente ConfirmComponent
     const dialogRef = this.dialog.open(ConfirmComponent, {
      width: '450px',   // ancho de la ventana del dialog
-     data: {id: id1, module: "property"}, // se indica el tipo de objeto a eliminar
+     data: {id: id1, module: "delete-property"}, // se indica el tipo de objeto a eliminar
     });
 
     // Call API to delete here
