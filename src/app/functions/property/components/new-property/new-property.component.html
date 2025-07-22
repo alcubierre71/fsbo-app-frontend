@@ -1,0 +1,57 @@
+
+<mat-toolbar color="primary" class="toolbar-title">
+    <span>{{estadoFormulario}} Asset</span>
+</mat-toolbar>
+
+<div class="form-wrapper">
+<mat-card class="asset-card">
+    <mat-card-title>{{estadoFormulario}} Property</mat-card-title>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Alias</mat-label>
+        <input matInput formControlName="alias" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Property Type</mat-label>
+        <input matInput formControlName="propertyType" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Built Area</mat-label>
+        <input matInput formControlName="builtArea" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Bedrooms</mat-label>
+        <input matInput formControlName="bedrooms" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Bathrooms</mat-label>
+        <input matInput formControlName="bathrooms" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Floor</mat-label>
+        <input matInput formControlName="floor" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Condition</mat-label>
+        <input matInput formControlName="condition" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" required>
+      </mat-form-field>
+  
+      <div class="button-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Save</button>
+        <button mat-button routerLink="/properties" type="button">Cancel</button>
+      </div>
+    </form>
+</mat-card>
+</div>

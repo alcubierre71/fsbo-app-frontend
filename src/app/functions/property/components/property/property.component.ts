@@ -28,7 +28,8 @@ import { PropertyService } from '../../services/property.service';
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   templateUrl: './property.component.html',
   styleUrls: ['./property.component.css']
