@@ -48,6 +48,71 @@
         <input matInput formControlName="description" required>
       </mat-form-field>
   
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Exterior</mat-label>
+        <input matInput formControlName="isExterior" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Elevator</mat-label>
+        <input matInput formControlName="hasElevator" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Parking</mat-label>
+        <input matInput formControlName="hasParking" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Storage Room</mat-label>
+        <input matInput formControlName="hasStorageRoom" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Air Conditioning</mat-label>
+        <input matInput formControlName="hasAirConditioning" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Balcony / Terrace</mat-label>
+        <input matInput formControlName="hasBalconyOrTerrace" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Pool</mat-label>
+        <input matInput formControlName="hasPool" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Country</mat-label>
+        <input matInput formControlName="country" required>
+      </mat-form-field>      
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Region</mat-label>
+        <input matInput formControlName="region" required>
+      </mat-form-field>    
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Province</mat-label>
+        <input matInput formControlName="province" required>
+      </mat-form-field>   
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>City</mat-label>
+        <input matInput formControlName="city" required>
+      </mat-form-field>  
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>District</mat-label>
+        <input matInput formControlName="district" required>
+      </mat-form-field> 
+         
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Neighborhood</mat-label>
+        <input matInput formControlName="neighborhood" required>
+      </mat-form-field>    
+
       <div class="button-container">
         <button mat-raised-button color="primary" type="submit" [disabled]="registrationForm.invalid">Save</button>
         <button mat-button routerLink="/properties" type="button">Cancel</button>

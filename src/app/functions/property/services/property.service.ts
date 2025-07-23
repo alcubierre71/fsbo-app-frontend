@@ -183,7 +183,7 @@ export class PropertyService {
   }
 
     // POST save new property
-  saveProperty(data: PropertyElement): Observable<void> {
+  saveProperty (data: PropertyElement): Observable<void> {
 
     let dataDto : PropertyDto = PropertyMapper.mapToDto(data);
 
@@ -193,11 +193,12 @@ export class PropertyService {
   }
 
   // PUT update property
-  updateProperty(id: number, data: PropertyElement): Observable<PropertyElement> {
+  updateProperty(data: PropertyElement): Observable<PropertyElement> {
     
     let dataDto: PropertyDto = PropertyMapper.mapToDto(data);
+    let propertyId: number | undefined = dataDto.propertyId;
 
-    let obs: Observable<PropertyElement> = this.http.put<PropertyDto>(`${this.baseUrl}/update/${id}`, dataDto).pipe(
+    let obs: Observable<PropertyElement> = this.http.put<PropertyDto>(`${this.baseUrl}/update/${propertyId}`, dataDto).pipe(
       map(updatedDto => PropertyMapper.mapToElement(updatedDto))
     );
 
